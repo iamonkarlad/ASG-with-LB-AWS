@@ -1,4 +1,4 @@
-# ⚙️App Deployment with ***Auto Scaling Group*** and ***Load Balancer***
+# Webapp Deployment with ***Auto Scaling Group*** and ***Load Balancer***
 ### In this project we describe how we deploy a web application using Three ( AGS )auto scaling group - each consist with HTML files (`home.html`, `login.html`, and `submit.html`) Each ASG is linked to a dedicated **Target Group**, all managed under a single ***Application Load Balancer (ALB)*** to make application highly available with no down time when traffic increase.
 ---
 - *An AGS ( ***Auto Scaling Group*** ) is  a service that automaticaly increase server when traffic is increased and decrease server when traffic decrease , just we have to configure some configuration.*
