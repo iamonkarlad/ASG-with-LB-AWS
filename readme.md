@@ -4,6 +4,9 @@
 - *An AGS ( ***Auto Scaling Group*** ) is  a service that automaticaly increase server when traffic is increased and decrease server when traffic decrease , just we have to configure some configuration.*
 - *A LB ( ***Load balancer*** ) is service that automatically distributes your incoming traffic across multiple targets, such as EC2 instances, containers, and IP addresses, in one or more Availability Zones.* 
 ---
+## Diagram Representation :
+![alt text](<images/Untitled design (4).png>)
+
 ## 🛠️Steps to Deploy 
 ### 1) 💻Login in to the AWS 
 ### 2) 🔒Create Security Group :
