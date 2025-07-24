@@ -5,7 +5,7 @@
 - *A LB ( ***Load balancer*** ) is service that automatically distributes your incoming traffic across multiple targets, such as EC2 instances, containers, and IP addresses, in one or more Availability Zones.* 
 ---
 ## Diagram Representation :
-![alt text](<images/Untitled design (4).png>)
+![alt text](<images/ASG with LB.png>)
 
 ## 🛠️Steps to Deploy 
 ### 1) 💻Login in to the AWS 
