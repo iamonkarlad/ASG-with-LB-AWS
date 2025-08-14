@@ -185,7 +185,7 @@ systemctl start nginx
 - Next Review whole page and click on `create auto scaling group`.
 - now we created first ASG as ( AGS-home)
 - after that Go to *EC2* instances and name the created instance as a *home*
-#### AS like above step we have create second ASG - login-AGS :
+#### As like above step we have create second ASG - login-AGS :
 - as above steps just change some configuration as given and **other are as given above from first ASG**
 > auto scaling group name : AGS-login<br>
 > Launch Template : # select  < login-LT > which we created<br>
@@ -194,9 +194,9 @@ systemctl start nginx
 - after that Go to *EC2* instances and name the created instance as a *login*
 #### AS like first ASG step we have create third ASG - submit-AGS :
 - as from first ASG step we just change some configuration as given and **other are as given from first ASG**
-> auto scaling group name : AGS-submit<br>
+> Auto scaling group name : AGS-submit<br>
 > Launch Template : # select  < submit-LT > which we created<br>
-> choose Target group : submit-TG<br>
+> Choose Target group : submit-TG<br>
 - now we created first ASG as ( AGS-submit)
 - after that Go to *EC2* instances and name the created instance as a *submit*
 
