@@ -60,7 +60,7 @@ systemctl start nginx
 ```bash
 #!/bin/bash
 yum update -y
-yum istall stress -y
+yum install stress -y
 yum install -y nginx
 cat <<EOF > /usr/share/nginx/html/login.html
 <!DOCTYPE html>
