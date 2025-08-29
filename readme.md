@@ -256,9 +256,9 @@ Above step for only home-TG , but we have created another two , for those we hav
 
 ![alt text](<images/Submit url.png>)
 ### 10) Testing  ASG :
-- go to instances 
-- select home instance and click on connect 
-- go to git bash terminal and connect 
+- Go to instances 
+- Select home instance and click on connect 
+- Go to git bash terminal and connect 
 - To check that stress is installed or not use this command
 ```bash
 which stress
@@ -267,9 +267,8 @@ which stress
 ```bash
 stress --cpu 80 --io 4 --vm 2 --vm-bytes 128M --timeout 10m &
 ```
-- check whether the new instance added or not , after few minutes
+- Check whether the new instance added or not , after few minutes
 - If added so your are done your project properly and your ASG is working with LB.
-- 🏁
 
 ---
 ## 📄Summary
