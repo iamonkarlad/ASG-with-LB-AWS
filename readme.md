@@ -1,5 +1,5 @@
 # Webapp Deployment with ***Auto Scaling Group*** and ***Load Balancer***
-### In this project we describe how we deploy a web application using Three ( AGS )auto scaling group - each consist with HTML files (`home.html`, `login.html`, and `submit.html`) Each ASG is linked to a dedicated **Target Group**, all managed under a single ***Application Load Balancer (ALB)*** to make application highly available with no down time when traffic increase.
+### In this project we describe how we deploy a web application using Three ( AGS )auto scaling group - each consist with HTML files (`home.html`, `login.html`, and `submit.html`) Each ASG is linked to a dedicated **Target Group**, all managed under a single **Application Load Balancer (ALB)** to make application highly available with no down time when traffic increase.
 ---
 - *An AGS ( ***Auto Scaling Group*** ) is  a service that automaticaly increase server when traffic is increased and decrease server when traffic decrease , just we have to configure some configuration.*
 - *A LB ( ***Load balancer*** ) is service that automatically distributes your incoming traffic across multiple targets, such as EC2 instances, containers, and IP addresses, in one or more Availability Zones.* 
@@ -9,14 +9,14 @@
 
 ## 🛠️Steps to Deploy 
 ### 1) 💻Login in to the AWS 
-### 2) 🔒Create Security Group :
+### 2) 🔒Create Security Group:
 - In a 🔍search bar search *EC2* 
 - In *EC2* console their is a ***Network & Security*** in the Left side , under that their is `Security group`
 - Go to that and click on *Create security group* to create new security group
-- Give name to SG - ***AGS-LB***
+- Give name to SG - **AGS-LB**
 - In inbound rule section , click Add Rule and add type - `SSH , HTTP , HTTPS` and select source `Select Anywhere IPv4`
 ![alt text](<images/ASG-LB security group.png>)
-### 3) Create a Launch Template :
+### 3) Create a Launch Template:
 - In that *EC2* service , in the left menu under the *instance* click on `Launch Template`
 - In that *Launch Template* click on ***_Create launch template*** ,
 we have to create ***three*** Templates.
@@ -150,35 +150,35 @@ systemctl start nginx
 - In listener and routing do not change any Just Click on ***Default Action*** , in that select target group we created ***only select home-TG because it is in index.html file . 
 > Default action : home-TG
 - Do not click any change for remaining options , Just *click* `create load balancer` 
-- recheck your load balancer configuration and click on `Create load balancer` and then it created.
+- Recheck your load balancer configuration and click on `Create load balancer` and then it created.
 ![alt text](<images/Load balancer.png>)
 
 ### 6) Create An Auto Scaling Group (ASG) :
 - We already created *Three* launch template for *three* ASG , now we have to created three ASG 
-- on left side under the *Load Balancing* option their is an ***auto scaling*** option , click on ***create auto scaling group***  to create ASG
-- for creating AGS their are some steps that we have to do -
+- On left side under the *Load Balancing* option their is an ***auto scaling*** option , click on ***create auto scaling group***  to create ASG
+- For creating AGS their are some steps that we have to do -
 ![alt text](images/creating-ASG.png)
 #### For first home-AGS :
-> auto scaling group name : AGS-home<br>
+> Auto Scaling Group name : AGS-home<br>
 > Launch Template : # select  < home-LT > which we created<br>
 - Click on `next`
 > In network section select 3 availability zone<br> 
 > In Availability zone distribution set < Balanced best effort ><br>
 > In Load balancing Section select < attach to an exixting load balancer ><br>
-> choose Target group : home-TG<br>
+> Choose Target group : home-TG<br>
 > Health grace period : 180<br>
-- click on `next`
+- Click on `next`
 > In group size section:<br>
 >       set desired capacity : 2
 >       min : 1 
 >       max : 4
 - In scaling policies
-> select Target tracking scaling policy<br>
-> metric type : select average CPU utilization<br>
-> target value : 60<br>
+> Select Target tracking scaling policy<br>
+> Metric type : select average CPU utilization<br>
+> Target value : 60<br>
 > Instance warmup : 10<br>
-> disable scale in to create only a scale-out policy : unchecked<br>
-- on another option kept as default 
+> Disable scale in to create only a scale-out policy : unchecked<br>
+- On another option kept as default 
 - click on `next`
 - To Add notifications , click on `next`
 - To Add Tags , click on `next` 
